@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Enter Financial Data{% endblock %}
+
+{% block content %}
+    <h1>Enter Financial Data</h1>
+    <form action="{{ url_for('financial_data') }}" method="POST">
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year" min="2000" max="2100" required><br><br>
+        <label for="month">Month:</label>
+        <input type="number" id="month" name="month" min="1" max="12" required><br><br>
+        <label for="salary">Salary:</label>
+        <input type="number" id="salary" name="salary" required><br><br>
+        <label for="monthly_rent">Monthly Rent:</label>
+        <input type="number" id="monthly_rent" name="monthly_rent" required><br><br>
+        <label for="monthly_expense">Monthly Expense:</label>
+        <input type="number" id="monthly_expense" name="monthly_expense" required><br><br>
+        <label for="monthly_investment">Monthly Investment:</label>
+        <input type="number" id="monthly_investment" name="monthly_investment" required><br><br>
+        <label for="monthly_savings">Monthly Savings:</label>
+        <input type="number" id="monthly_savings" name="monthly_savings" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}

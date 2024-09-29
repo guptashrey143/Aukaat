@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h1>Dashboard</h1>
+
+{% if message %}
+<p>{{ message }}</p>
+{% else %}
+<div style="display: flex; justify-content: space-between;">
+    <div style="width: 45%;">
+        <h2>Gross Data</h2>
+        <p>Total Income: ${{ total_income }}</p>
+        <p>Total Expenses: ${{ total_expenses }}</p>
+        <p>Total Investment: ${{ total_investment }}</p>
+        <p>Total Savings: ${{ total_savings }}</p>
+    </div>
+    <div id="pie-chart" style="width: 45%;"></div>
+</div>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+    var graphJSON = {{ graphJSON | safe }};
+    Plotly.newPlot('pie-chart', graphJSON.data, graphJSON.layout);
+</script>
+{% endif %}
+{% endblock %}

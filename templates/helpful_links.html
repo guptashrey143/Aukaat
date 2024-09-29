@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Helpful Links{% endblock %}
+
+{% block content %}
+<h1>Helpful Links</h1>
+<ul>
+    {% for link in links %}
+    <li><a href="{{ link.url }}" target="_blank">{{ link.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

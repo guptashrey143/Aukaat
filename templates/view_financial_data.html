@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}View Financial Data{% endblock %}
+{% block content %}
+    <h1>Financial Data</h1>
+    <table border = "1">
+        <tr>
+            <th>Year</th>
+            <th>Month</th>
+            <th>Salary</th>
+            <th>Monthly Rent</th>
+            <th>Monthly Expense</th>
+            <th>Monthly Investment</th>
+            <th>Monthly Savings</th>
+            <!-- <th>Actions</th> -->
+        </tr>
+        {% for entry in data %}
+        <tr>
+            <td>{{ entry.year }}</td>
+            <td>{{ entry.month }}</td>
+            <td>{{ entry.salary }}</td>
+            <td>{{ entry.monthly_rent }}</td>
+            <td>{{ entry.monthly_expense }}</td>
+            <td>{{ entry.monthly_investment }}</td>
+            <td>{{ entry.monthly_savings }}</td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
